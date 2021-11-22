@@ -7,8 +7,17 @@ const lat = process.argv[2];
 const lng = process.argv[3];
 
 const cities = require("cities");
+
+// search City use 
 if(lat && lng)
 {
     let city = cities.gps_lookup(lat,lng);
     console.log(city);
+}
+// search ZIP in USA
+const zip = process.argv[2];
+if(zip)
+{
+    let zipcode = cities.zip_lookup(zip);
+    console.log(zipcode);
 }
