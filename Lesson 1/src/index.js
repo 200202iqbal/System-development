@@ -21,3 +21,12 @@ if(zip)
     let zipcode = cities.zip_lookup(zip);
     console.log(zipcode);
 }
+
+// search findbyState
+
+const findByState = process.argv[2];
+if(findByState)
+{
+    let state = cities.findByState(findByState);
+    console.log(state)
+}
