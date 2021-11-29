@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *,body{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+</style>
+<body>
+    <header>
+        <div style="background-color: aquamarine; padding: 3px 0px;">
+            <h1 style="color:rgb(85, 87, 87)"> This Is Index Page</h1>
+        </div>
+    </header>
+    <section>
+       <form action="/auth" method="post">
+           <div>
+               <label for="">ログイン名</label>
+                <input type="text" name="login_name" id="login">
+            </div>
+            <div>
+                <label for="">パスワード</label>
+                 <input type="password" name="password" id="pass">
+             </div>
+             <div>
+                <button type="submit">Login</button>
+             </div>
+       </form>
+    </section>
+</body>
+</html>
