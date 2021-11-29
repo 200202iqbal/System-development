@@ -16,13 +16,8 @@ app.post("/auth",(request,response)=>{
     const login_name = request.body.login_name;
     const password = request.body.password;
     let message = ""
-    if(login_name == process.env.LOGINNAME && password == process.env.PASSWORD)
-    {
-        message = ">ログインしました"
-    }
-    else{
-        message = "ログインできません。";
-    } 
+    message = (login_name == process.env.LOGINNAME && password == process.env.PASSWORD) ? "ログインしました": "ログインできません。";
+    
     
     response.send(message);
 });
