@@ -15,8 +15,8 @@ app.use(express.static(__dirname+"/public"));
 app.post("/auth",(request,response)=>{
     const login_name = request.body.login_name;
     const password = request.body.password;
-    let message = ""
-    message = (login_name == process.env.LOGINNAME && password == process.env.PASSWORD) ? "ログインしました": "ログインできません。";
+    //ternary
+    let message = (login_name == process.env.LOGINNAME && password == process.env.PASSWORD) ? "ログインしました": "ログインできません。";
     
     
     response.send(message);
