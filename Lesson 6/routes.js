@@ -8,6 +8,17 @@ router.get("/",(req,res)=>{
     res.render("index.ejs",data);
 })
 
+router.get("/profile-ejs",(req,res)=>{
+    let data = {}
+    data.title = "プロフィール"
+    res.render("profile/index.ejs",data);
+})
+router.get("/login",(req,res)=>{
+    let data = {}
+    data.title = "プロフィール"
+    res.render("login/login.ejs",data);
+})
+
 router.get("/profile",(req,res)=>{
     res.send("This is Profile Page");
 })
