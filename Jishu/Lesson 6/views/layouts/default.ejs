@@ -8,9 +8,12 @@
     <title>MyPage : <%=title%></title>
 </head>
 <body>
+    <%- include("../components/nav.ejs")%>
+
     <div class="container">
-        <h1 class="h1 fs-2 pt-3"><%=title %></h1>
-        <%= body %>
+        <h1 class="h1 fs-2 pt-3"><%=title%></h1>
+        <%-body%>
     </div>
+    <%- include("../components/footer")%>
 </body>
 </html>

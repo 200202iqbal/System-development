@@ -2,12 +2,14 @@
 <div>
     <dl>
         <dt>名前</dt>
-        <dd>YSE 横浜</dd>
+        <dd><%=user.name%></dd>
         <dt>出身地</dt>
-        <dd>横浜</dd>
+        <dd><%=user.birthplace%></dd>
         <dt>趣味</dt>
         <dd>
-            旅行 グルメ スポーツ
+            <% user.hobby.forEach((hobby)=>{ %>
+            <%= hobby %>
+            <%})%>
         </dd>
     </dl>
 </div>
