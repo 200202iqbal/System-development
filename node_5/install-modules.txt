@@ -1,0 +1,6 @@
+モジュールインストール:
+Express 
+EJS
+Dotenv
+Socket.io
+UUID = universally unique identifier (UUID)
