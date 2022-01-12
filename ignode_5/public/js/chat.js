@@ -196,7 +196,25 @@ $(() => {
         createChatImage(data,{width:STAMP_WIDTH})
 
     })
-    
+
+    $('.uploadImage').on('change' , (event) => {
+        console.log("Upload Image")
+        const file = event.target.files[0]
+        const fileReader = new FileReader()
+        fileReader.onloadend = () => {
+            let data = {}
+            data.image = fileReader.result
+            data.user = user
+            socket.emit("upload_image",data)
+        }
+        fileReader.readAsDataURL(file)
+    })
+
+    socket.on("load_image",(data)=>{
+        createChatImage(data,{width:STAMP_WIDTH})
+
+    })
+
 
     $('#logout').on('click', () => {
         socket.emit("logout")
