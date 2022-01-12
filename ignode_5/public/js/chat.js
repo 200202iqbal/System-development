@@ -192,6 +192,12 @@ $(() => {
 
     })
 
+    socket.on("load_stamp",(data)=>{
+        createChatImage(data,{width:STAMP_WIDTH})
+
+    })
+    
+
     $('#logout').on('click', () => {
         socket.emit("logout")
         user ={}
