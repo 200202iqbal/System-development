@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'))
 app.get('/', (req, res) => {
     res.render('index.ejs')
 })
-
+  
 //ユーザリスト
 let users = {}
 
@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
         data.datetime = Date.now()
         io.emit('load_stamp', data)
     })
-    
+
     socket.on('upload_image', (data) => {
         data.datetime = Date.now()
         io.emit('load_image', data)
