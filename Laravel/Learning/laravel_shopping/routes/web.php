@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\Controllers\Admin\ItemController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,8 +27,14 @@ Route::get('/', function () {
 });
 
 Route::get("/about",function(){
-   return "This is about page"; 
+   return view("about"); 
 });
+
+Route::prefix('admin/item')
+        ->namespace('Admin')
+        ->group(function(){
+            Route::get('/', [ItemController::class,'index']);
+        });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
